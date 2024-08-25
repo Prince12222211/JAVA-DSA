@@ -1,6 +1,3 @@
-import java.util.*;
-import java.util.Scanner;
-
 // public class Main {
 
 //   public static void main(String args[]) {
@@ -217,3 +214,65 @@ import java.util.Scanner;
 //         System.out.print(greet);
 //     }
 // }
+
+// public class Main{
+
+//     public static void main(String args[]){
+//         int a=10;
+//         int b=20;
+//         int temp;
+//         temp=a;
+//         a=b;
+//         b=temp;
+//         System.out.print("The value of a is: "+a);
+        
+
+//     }
+// }
+
+
+//Variable Arguemnets
+//public  class  Main{
+//public static void main(String[] args) {
+//fun(2,3,4,5,6,7);
+//multiple(2,3,"Prince","Reetika","Reet");
+//}
+//static void multiple(int a,int b,String ...v){
+//    System.out.print(a+" "+b+Arrays.toString(v));
+//
+//}
+//static  void fun(int ...v){
+//    System.out.println(Arrays.toString(v));
+//}
+//}
+
+
+//Method Overloading
+//public  class Main{
+//public static void main(String[] args) {
+//
+//fun(45);
+//fun("Prince");
+//int ans=sum(3,4);
+//System.out.println(ans);
+//int ans2=sum(4,5,6);
+//System.out.println(ans2);
+//
+//
+//}
+//static  void fun(int num){
+//    System.out.println(num);
+//}
+//static  void fun(String name){
+//    System.out.println(name);
+//}
+//static int sum(int a,int b){
+//    return a+b;
+//}
+//static  int sum(int a,int b,int c){
+//    return a+b+c;
+//}
+//
+//}
+
+
