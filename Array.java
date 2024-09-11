@@ -68,29 +68,29 @@ import java.util.Scanner;
 //        }
 //    }
 //}
-public  class Array
-{
-    public  static  void main(String args[]){
-        Scanner scan=new Scanner(System.in);
-        int [][]arr=new int[3][3];
-
-        System.out.println(arr.length); //no. of rows
-        for(int row=0;row<arr.length;row++){
-            for(int col=0;col<arr[row].length;col++){
-                arr[row][col]=scan.nextInt();
-
-            }
-        }
-        for(int row=0;row<arr.length;row++){
-            for(int col=0;col<arr[row].length;col++){
+//public  class Array
+//{
+//    public  static  void main(String args[]){
+//        Scanner scan=new Scanner(System.in);
+//        int [][]arr=new int[3][3];
+//
+//        System.out.println(arr.length); //no. of rows
+//        for(int row=0;row<arr.length;row++){
+//            for(int col=0;col<arr[row].length;col++){
 //                arr[row][col]=scan.nextInt();
-
-                System.out.print(arr[row][col]+" ");
-            }
-            System.out.println();
-        }
-    }
-}
+//
+//            }
+//        }
+//        for(int row=0;row<arr.length;row++){
+//            for(int col=0;col<arr[row].length;col++){
+////                arr[row][col]=scan.nextInt();
+//
+//                System.out.print(arr[row][col]+" ");
+//            }
+//            System.out.println();
+//        }
+//    }
+//}
 //output:
 //1 2 3
 // 4 5 6
@@ -120,3 +120,4 @@ public  class Array
 //[1, 2, 3]
 //[4, 5, 6]
 //[7, 8, 9]
+
