@@ -1,5 +1,9 @@
+import javax.sql.rowset.spi.SyncResolver;
+import java.sql.SQLOutput;
 import  java.util.*;
 import java.util.Scanner;
+
+import static java.util.Collections.swap;
 
 
 //Prime Number check
@@ -61,5 +65,87 @@ import java.util.Scanner;
 //        return false;
 //    }
 //}
+
+
+
+//Arrays question
+//1.Swapping the array
+//public  class Question {
+//    public  static  void main(String[]args) {
+//        Scanner scan = new Scanner(System.in);
+//        int arr[] = {1, 3, 23, 9, 18};
+//        swap(arr, 0, 4);
+//        System.out.println(Arrays.toString(arr));
+//    }
+//        public static  void swap(int arr[],int indx1,int ind2){
+//    int temp=arr[indx1];
+//    arr[indx1]=arr[ind2];
+//    arr[ind2]=temp;
+//
+//
+//
+//    }
+//}
+
+public  class Question {
+    public  static  void main(String args[]){
+        int arr[]={1,2,32,2431,21};
+        System.out.println("The maximum value of the array is: "+max(arr));
+        System.out.println("The minimum value of the array is: "+min(arr));
+        System.out.println("The maximum number range between "+maxRange(arr,0,3));
+//        System.out.println(Reverse(arr));
+        Reverse(arr);
+    }
+
+    static  void Reverse(int arr[]) {
+        int start = 0;
+        int end = arr.length - 1;
+        while (start < end) {
+            swap(arr, start, end);
+            start++;
+            end--;
+        }
+
+    }
+    static void swap(int arr[],int start,int end){
+        int temp=arr[start];
+        arr [start]=arr[end];
+        arr[end]=temp;
+
+    }
+
+
+    static int max(int arr[]){
+        int max_val=Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>max_val){
+                max_val=arr[i];
+            }
+        }
+        return max_val;
+    }
+    static  int min(int arr[]){
+        int min=Integer.MAX_VALUE;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]<min){
+                min=arr[i];
+            }
+        }
+        return  min;
+    }
+    static  int maxRange(int []arr,int start,int end){
+        int maxVal=Integer.MIN_VALUE;
+        for(int i=start;i<=end;i++){
+            if(arr[i]>maxVal){
+                maxVal=arr[i];
+            }
+        }
+        return maxVal;
+    }
+
+    }
+
+
+
 
 
