@@ -87,17 +87,20 @@ import static java.util.Collections.swap;
 //    }
 //}
 
-public  class Question {
-    public  static  void main(String args[]){
-        int arr[]={1,2,32,2431,21};
-        System.out.println("The maximum value of the array is: "+max(arr));
-        System.out.println("The minimum value of the array is: "+min(arr));
-        System.out.println("The maximum number range between "+maxRange(arr,0,3));
-//        System.out.println(Reverse(arr));
+
+public class Question {
+    public static void main(String args[]) {
+        int arr[] = {1, 2, 32, 2431, 21};
+        System.out.println("The maximum value of the array is: " + max(arr));
+        System.out.println("The minimum value of the array is: " + min(arr));
+        System.out.println("The maximum number in the range is: " + maxRange(arr, 0, 3));
+
         Reverse(arr);
+        System.out.print("The reversed array is: ");
+        printArray(arr);  // Printing the reversed array
     }
 
-    static  void Reverse(int arr[]) {
+    static void Reverse(int arr[]) {
         int start = 0;
         int end = arr.length - 1;
         while (start < end) {
@@ -105,47 +108,49 @@ public  class Question {
             start++;
             end--;
         }
-
-    }
-    static void swap(int arr[],int start,int end){
-        int temp=arr[start];
-        arr [start]=arr[end];
-        arr[end]=temp;
-
     }
 
+    static void swap(int arr[], int start, int end) {
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+    }
 
-    static int max(int arr[]){
-        int max_val=Integer.MIN_VALUE;
-        for(int i=0;i<arr.length;i++){
-            if(arr[i]>max_val){
-                max_val=arr[i];
+    static int max(int arr[]) {
+        int max_val = Integer.MIN_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max_val) {
+                max_val = arr[i];
             }
         }
         return max_val;
     }
-    static  int min(int arr[]){
-        int min=Integer.MAX_VALUE;
-        for(int i=0;i<arr.length;i++){
-            if(arr[i]<min){
-                min=arr[i];
+
+    static int min(int arr[]) {
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
             }
         }
-        return  min;
+        return min;
     }
-    static  int maxRange(int []arr,int start,int end){
-        int maxVal=Integer.MIN_VALUE;
-        for(int i=start;i<=end;i++){
-            if(arr[i]>maxVal){
-                maxVal=arr[i];
+
+    static int maxRange(int[] arr, int start, int end) {
+        int maxVal = Integer.MIN_VALUE;
+        for (int i = start; i <= end; i++) {
+            if (arr[i] > maxVal) {
+                maxVal = arr[i];
             }
         }
         return maxVal;
     }
 
+    // Function to print the array
+    static void printArray(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
     }
-
-
-
-
-
+}
