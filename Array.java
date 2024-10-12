@@ -238,7 +238,42 @@ import java.util.Scanner;
 //        return min;
 //    }
 //}
+//
+//public  class Array {
+//    public static void main(String[] args) {
+//        Scanner scan=new Scanner(System.in);
+//        int n=scan.nextInt();
+//        int m=scan.nextInt();
+//        int arr[][]=new int[n][m];
+//        for(int i=0;i<n;i++){
+//            for(int j=0;j<m;j++){
+//                arr[i][j]=scan.nextInt();
+//            }
+//        }
+//    }
+//    static  int search2D(int arr[][],int target){
+//        for(int i=0;i<arr.length;i++){
+//            for(int j=0;arr[i].length;j++){
+//                if(arr[i][j]==target){
+//                    return  arr[][j];
+//                }
+//
+//            }
+//            return  1;
+//        }
+//    }
+//}
 
+
+
+//Binary Search Algorithm
 public  class Array {
-    public  static  void main
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        int n=scan.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){
+
+        }
+    }
 }
