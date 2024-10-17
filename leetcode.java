@@ -126,31 +126,37 @@ import java.util.*;
 //}
 
 
+//public class leetcode {
+//
+//    public static void main(String[] args) {
+//        Scanner scan = new Scanner(System.in);
+//        String s = scan.nextLine();
+//        scan.close();
+//
+//        // Trim leading and trailing spaces and split the string using a regular expression
+//        s = s.trim();
+//
+//        if (s.isEmpty()) {
+//            // If the string is empty after trimming, no tokens
+//            System.out.println(0);
+//            return;
+//        }
+//
+//        // Split based on non-alphabetic characters
+//        String[] tokens = s.split("[^a-zA-Z]+");
+//
+//        // Print the number of tokens
+//        System.out.println(tokens.length);
+//
+//        // Print each token
+//        for (String token : tokens) {
+//            System.out.println(token);
+//        }
+//    }
+//}
+
 public class leetcode {
-
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        String s = scan.nextLine();
-        scan.close();
-
-        // Trim leading and trailing spaces and split the string using a regular expression
-        s = s.trim();
-
-        if (s.isEmpty()) {
-            // If the string is empty after trimming, no tokens
-            System.out.println(0);
-            return;
-        }
-
-        // Split based on non-alphabetic characters
-        String[] tokens = s.split("[^a-zA-Z]+");
-
-        // Print the number of tokens
-        System.out.println(tokens.length);
-
-        // Print each token
-        for (String token : tokens) {
-            System.out.println(token);
-        }
+        System.out.println("Hellow world");
     }
 }
