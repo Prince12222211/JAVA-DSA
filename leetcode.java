@@ -154,8 +154,36 @@ import java.util.*;
 //        }
 //    }
 //}
-public class leetcode {
-    public static void main(String[] args) {
-        System.out.println("Hellow world");
+
+class Solution {
+    public char findKthBit(int n, int k) {
+        // Base case: If n == 1, S1 = "0", so return '0'
+        if (n == 1) {
+            return '0';
+        }
+
+        // Calculate the length of the current string Sn
+        int length = (1 << n) - 1; // This is 2^n - 1
+
+        // Middle index of Sn
+        int mid = length / 2 + 1;
+
+        // If k is the middle bit, it's always '1'
+        if (k == mid) {
+            return '1';
+        }
+
+        // If k is in the first half, recursively find the answer in S(n-1)
+        if (k < mid) {
+            return findKthBit(n - 1, k);
+        }
+
+        // If k is in the second half, mirror the index and invert the result
+        // Mirror k to the first half
+        int mirroredIndex = length - k + 1;
+        char mirroredBit = findKthBit(n - 1, mirroredIndex);
+
+        // Invert the bit ('0' becomes '1' and '1' becomes '0')
+        return (mirroredBit == '0') ? '1' : '0';
     }
 }
