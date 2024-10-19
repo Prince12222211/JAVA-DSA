@@ -155,7 +155,7 @@ import java.util.*;
 //    }
 //}
 
-class Solution {
+class leetcode {
     public char findKthBit(int n, int k) {
         // Base case: If n == 1, S1 = "0", so return '0'
         if (n == 1) {
