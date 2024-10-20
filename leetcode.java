@@ -155,35 +155,69 @@ import java.util.*;
 //    }
 //}
 
-class leetcode {
-    public char findKthBit(int n, int k) {
-        // Base case: If n == 1, S1 = "0", so return '0'
-        if (n == 1) {
-            return '0';
+
+
+import java.util.Stack;
+
+class Solution {
+    public boolean parseBoolExpr(String expression) {
+        Stack<Character> stack = new Stack<>();
+
+        // Traverse each character in the expression
+        for (char c : expression.toCharArray()) {
+            if (c == ')') {
+                // When we find a closing parenthesis, process the sub-expression
+                Stack<Character> subExpr = new Stack<>();
+                // Collect all characters in the current sub-expression until '('
+                while (stack.peek() != '(') {
+                    subExpr.push(stack.pop());
+                }
+                // Pop the '(' from the stack
+                stack.pop();
+
+                // Pop the operator (either '!', '&', or '|')
+                char operator = stack.pop();
+
+                // Evaluate the sub-expression and push the result back to the stack
+                boolean result = evaluate(subExpr, operator);
+                stack.push(result ? 't' : 'f');
+            } else if (c != ',') {
+                // Push all other characters except commas
+                stack.push(c);
+            }
         }
 
-        // Calculate the length of the current string Sn
-        int length = (1 << n) - 1; // This is 2^n - 1
+        // The result will be the only element left in the stack
+        return stack.peek() == 't';
+    }
 
-        // Middle index of Sn
-        int mid = length / 2 + 1;
-
-        // If k is the middle bit, it's always '1'
-        if (k == mid) {
-            return '1';
+    // Helper method to evaluate a sub-expression
+    private boolean evaluate(Stack<Character> subExpr, char operator) {
+        if (operator == '!') {
+            // For NOT, we simply flip the boolean value of the single expression
+            return subExpr.pop() == 'f'; // !f -> true, !t -> false
+        } else if (operator == '&') {
+            // For AND, we return true only if all sub-expressions are true
+            boolean result = true;
+            while (!subExpr.isEmpty()) {
+                result &= (subExpr.pop() == 't');
+            }
+            return result;
+        } else {
+            // For OR, we return true if any sub-expression is true
+            boolean result = false;
+            while (!subExpr.isEmpty()) {
+                result |= (subExpr.pop() == 't');
+            }
+            return result;
         }
+    }
 
-        // If k is in the first half, recursively find the answer in S(n-1)
-        if (k < mid) {
-            return findKthBit(n - 1, k);
-        }
-
-        // If k is in the second half, mirror the index and invert the result
-        // Mirror k to the first half
-        int mirroredIndex = length - k + 1;
-        char mirroredBit = findKthBit(n - 1, mirroredIndex);
-
-        // Invert the bit ('0' becomes '1' and '1' becomes '0')
-        return (mirroredBit == '0') ? '1' : '0';
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        // Test cases
+        System.out.println(solution.parseBoolExpr("&(|(f))"));    // Output: false
+        System.out.println(solution.parseBoolExpr("|(f,f,f,t)")); // Output: true
+        System.out.println(solution.parseBoolExpr("!(&(f,t))"));  // Output: true
     }
 }
