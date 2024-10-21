@@ -154,70 +154,96 @@ import java.util.*;
 //        }
 //    }
 //}
+//
+//import java.util.HashSet;
+//import java.util.Set;
+//
+//class Solution {
+//    public int maxUniqueSplit(String s) {
+//        return backtrack(s, 0, new HashSet<>());
+//    }
+//
+//    private int backtrack(String s, int start, Set<String> uniqueSubstrings) {
+//        if (start == s.length()) {
+//            return 0;
+//        }
+//
+//        int maxSplits = 0;
+//
+//        for (int end = start + 1; end <= s.length(); end++) {
+//            String substring = s.substring(start, end);
+//
+//            if (!uniqueSubstrings.contains(substring)) {
+//                uniqueSubstrings.add(substring);
+//                maxSplits = Math.max(maxSplits, 1 + backtrack(s, end, uniqueSubstrings));
+//                uniqueSubstrings.remove(substring);
+//            }
+//        }
+//
+//        return maxSplits;
+//    }
+//}
 
 
+public class leetcode {
+    public static void main(String[] args) {
+        System.out.println("Hello world");
+    }
+}
 
-import java.util.Stack;
+import java.util.HashSet;
+import java.util.Set;
 
 class Solution {
-    public boolean parseBoolExpr(String expression) {
-        Stack<Character> stack = new Stack<>();
+    public int maxUniqueSplit(String s) {
+        return backtrack(s, 0, new HashSet<>());
+    }
 
-        // Traverse each character in the expression
-        for (char c : expression.toCharArray()) {
-            if (c == ')') {
-                // When we find a closing parenthesis, process the sub-expression
-                Stack<Character> subExpr = new Stack<>();
-                // Collect all characters in the current sub-expression until '('
-                while (stack.peek() != '(') {
-                    subExpr.push(stack.pop());
-                }
-                // Pop the '(' from the stack
-                stack.pop();
+    private int backtrack(String s, int start, Set<String> uniqueSubstrings) {
+        if (start == s.length()) {
+            return 0;
+        }
 
-                // Pop the operator (either '!', '&', or '|')
-                char operator = stack.pop();
+        int maxSplits = 0;
 
-                // Evaluate the sub-expression and push the result back to the stack
-                boolean result = evaluate(subExpr, operator);
-                stack.push(result ? 't' : 'f');
-            } else if (c != ',') {
-                // Push all other characters except commas
-                stack.push(c);
+        for (int end = start + 1; end <= s.length(); end++) {
+            String substring = s.substring(start, end);
+
+            if (!uniqueSubstrings.contains(substring)) {
+                uniqueSubstrings.add(substring);
+                maxSplits = Math.max(maxSplits, 1 + backtrack(s, end, uniqueSubstrings));
+                uniqueSubstrings.remove(substring);
             }
         }
 
-        // The result will be the only element left in the stack
-        return stack.peek() == 't';
+        return maxSplits;
+    }
+}
+import java.util.HashSet;
+import java.util.Set;
+
+class Solution {
+    public int maxUniqueSplit(String s) {
+        return backtrack(s, 0, new HashSet<>());
     }
 
-    // Helper method to evaluate a sub-expression
-    private boolean evaluate(Stack<Character> subExpr, char operator) {
-        if (operator == '!') {
-            // For NOT, we simply flip the boolean value of the single expression
-            return subExpr.pop() == 'f'; // !f -> true, !t -> false
-        } else if (operator == '&') {
-            // For AND, we return true only if all sub-expressions are true
-            boolean result = true;
-            while (!subExpr.isEmpty()) {
-                result &= (subExpr.pop() == 't');
-            }
-            return result;
-        } else {
-            // For OR, we return true if any sub-expression is true
-            boolean result = false;
-            while (!subExpr.isEmpty()) {
-                result |= (subExpr.pop() == 't');
-            }
-            return result;
+    private int backtrack(String s, int start, Set<String> uniqueSubstrings) {
+        if (start == s.length()) {
+            return 0;
         }
-    }
 
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        // Test cases
-        System.out.println(solution.parseBoolExpr("&(|(f))"));    // Output: false
-        System.out.println(solution.parseBoolExpr("|(f,f,f,t)")); // Output: true
-        System.out.println(solution.parseBoolExpr("!(&(f,t))"));  // Output: true
+        int maxSplits = 0;
+
+        for (int end = start + 1; end <= s.length(); end++) {
+            String substring = s.substring(start, end);
+
+            if (!uniqueSubstrings.contains(substring)) {
+                uniqueSubstrings.add(substring);
+                maxSplits = Math.max(maxSplits, 1 + backtrack(s, end, uniqueSubstrings));
+                uniqueSubstrings.remove(substring);
+            }
+        }
+
+        return maxSplits;
     }
 }
