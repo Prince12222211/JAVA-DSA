@@ -47,8 +47,9 @@
 //    }
 //
 //}
-public class GFG {
-    public  static  void main(String args[]){
+
+public class GFG{
+    public static void main(String[] args) {
         System.out.println("Hello world");
     }
 }
