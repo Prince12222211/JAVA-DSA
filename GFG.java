@@ -51,5 +51,9 @@
 public class GFG{
     public static void main(String[] args) {
         System.out.println("Hello world");
+        System.out.println("Prince verma");
+        System.out.println("Verma");
+        System.out.println("Ravi");
+        System.out.println("Prince verma");
     }
 }
