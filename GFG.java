@@ -48,20 +48,14 @@
 //
 //}
 
+import java.util.Scanner;
+
 public class GFG{
     public static void main(String[] args) {
         System.out.println("Hello world");
-        System.out.println("Prince verma");
-        System.out.println("Verma");
-        System.out.println("Ravi");
-        System.out.println("Prince verma");
-        System.out.println("Ravi verma");
-        System.out.println("Raj verma");
-        System.out.println("hello world");
-        System.out.println("Ravi verma");
+      Scanner scan=new Scanner(System.in);
+      int n=scan.nextInt();
 
-
-        System.out.println("Chotu mistri");
 
     }
 }
