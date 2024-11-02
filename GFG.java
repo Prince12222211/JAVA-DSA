@@ -54,7 +54,7 @@ public class GFG{
     public static void main(String[] args) {
         System.out.println("Hello world");
       Scanner scan=new Scanner(System.in);
-      int n=scan.nextInt();
+
 
 
 
