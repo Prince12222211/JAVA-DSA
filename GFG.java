@@ -53,7 +53,8 @@ import java.util.Scanner;
 public class GFG{
     public static void main(String[] args) {
         System.out.println("Hello world");
-      Scanner scan=new Scanner(System.in)
+      Scanner scan=new Scanner(System.in);
+
 
 
 
