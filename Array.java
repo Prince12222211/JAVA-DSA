@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 //public class Array {
 //    public static void main(String[] args) {
+
 //        //Store a roll number
 //        //Syntax
 //        //datatype[]variable_name=new datatype[size];
