@@ -6,6 +6,7 @@ import java.util.Scanner;
 import static java.util.Collections.swap;
 
 
+
 //Prime Number check
 //public class Question {
 //    public static void main(String[] args) {
